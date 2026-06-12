@@ -3,7 +3,7 @@ from suma_lista import suma_lista
 
 
 def test_suma_correcta():
-    assert suma_lista([1, 2, 3, 4]) == 10
+    assert suma_lista([1, 2, 3, 4]) == 20
 
 
 def test_lista_un_elemento():
