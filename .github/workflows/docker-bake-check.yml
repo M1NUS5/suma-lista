@@ -1,0 +1,21 @@
+name: Docker Bake Check
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  bake-check:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+
+      - name: Validate build with Bake
+        uses: docker/bake-action@v6
+        with:
+          targets: validate-build
